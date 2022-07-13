@@ -10,11 +10,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
 
-# turn off pink boxes for demo
+# turn off warnings
 import warnings
 warnings.filterwarnings("ignore")
 
-
+# telco data cleaning
 def prep_telco_data():
 
     df = acquire.get_telco_data()
@@ -56,7 +56,7 @@ def prep_telco_data():
                     'streaming_movies', 'contract_type', 'internet_service_type', 'payment_type' ], inplace=True)
 
 
-    # concats dummy to DF
+    # concatenating dummy to DF
     df = pd.concat([df, dummy_df], axis=1)
     return df
 

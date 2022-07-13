@@ -1,8 +1,3 @@
-# Telco Project
-This repo is to provide some insight into the structure of what your first project (and those after) will resemeble. 
-
-## About the Project 
-
 ### Project Goals
 
 The project goal is to identify large drivers of churn and come up with a model that acts on those findings so we may take the next steps towards reducing churn.
@@ -15,51 +10,58 @@ There are probably many reasons for churn at telco, and some of them may be rela
 
 ### Initial Questions
 
-*Your readme should include initial questions and focus you are going into the analysis with. This is an important part of project planning and gives context to the reader about where you started, what were your initial ideas and thoughts, and did those play out to be true.*
-
-For example: 
-
 What services churn more?
 
-Which contracts churn more?
+Which contract types churn more?
 
 Is churn related to cost for service?
 
+Who is likely to churn?
+
 ### Data Dictionary
 
-*Your readme should include a data dictionary, which is important to provide in order to define and disambiguate each of the variables you are analyzing.*
-
-For example: 
-
-
-| Variable          | Meaning     |
-| -----------       | ----------- |
-| internet service  |             |
-| cost              |             |
-| contract length   |             |
+| Variable                                      Meaning         
+| -----------                                  -----------       
+| fiber optic internet service | Customers who have fiber optic internet service                    
+| monthly charges              | How customers pay monthly         
+| contract type                | 1 month, 1 year or 2 year contract types         
+| tenure                       | How long the customer has been subscribed, in months          
+| tech support                 | If the customer has tech support service          
+| dependents                   | Does the customer have dependents         
+| relationship status          | does the customer have a partner          
+                              
 
 
 ### Steps to Reproduce
 
-*Your readme should include useful and adequate instructions for reproducing your analysis and final report.*
+1. You will need an env.py file that contains the hostname, username and password of the mySQL database that contains the telco table. Store that env file locally in the repository. Use a gitignore file to hide your env.
 
-For example: 
+2. clone my repo (including the acquire.py and prepare.py)
 
-1. You will need an env.py file that contains the hostname, username and password of the mySQL database that contains the titanic_db.passengers table. Store that env file locally in the repository. 
-2. clone my repo (including the acquireTitanic.py and prepare.Titanic.py) (confirm .gitignore is hiding your env.py file)
-3. libraries used are pandas, matplotlib, seaborn, stats, numpy, sklearn. 
-4. you should be able to run survival_report. 
+3. libraries used are pandas, matplotlib, seaborn, stats, numpy, sklearn and math
+
+4. Run my exploration / presentation files
 
 ### The Plan
 
-1.) Hypothesis
+1.) Initial questions
 2.) Data aquisition
 3.) Data cleaning
 4.) Exploration
 5.) Modeling explored data
-6.) Making predictions/drawing conclusions
+6.) drawing conclusions
 7.) Making suggestion
 
 ### Key Findings
 
+Churn seems to be influenced by many factors, but the following have strong correlation:
+- internet type and internet options.
+- contract length and tenure as a customer
+- Age, relationship status and family type
+- product cost
+
 ### Recommendations / Takeaways
+
+- incentivize customers to choose longer contracts with special deals
+- lower monthly costs in general to retain customers long term
+- Market to large families, as they seem to be a target group for long term subscription
