@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # telco data cleaning
-def prep_telco_data_original():
+def prep_telco_data():
 
     df = acquire.get_telco_data()
        
@@ -49,9 +49,14 @@ def prep_telco_data_original():
     df.drop(columns=['Unnamed: 0', 'payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id', 'churn', 'gender', 
                     'partner', 'dependents', 'phone_service', 'paperless_billing', 'multiple_lines',
                     'online_security', 'online_backup', 'device_protection', 'tech_support', 'streaming_tv',
-                    'streaming_movies', 'contract_type', 'internet_service_type', 'payment_type' ], inplace=True)
+                    'streaming_movies', 'contract_type', 'internet_service_type', 'payment_type'], inplace=True)
 
-def prep_telco_data():
+ # concatenating dummy to DF
+    df = pd.concat([df, dummy_df], axis=1)
+    return df                   
+
+# Making my prediction function with customer_id
+def prep_telco_data_pred():
 
     df = acquire.get_telco_data()
        
@@ -89,7 +94,7 @@ def prep_telco_data():
     df.drop(columns=['Unnamed: 0', 'payment_type_id', 'internet_service_type_id', 'contract_type_id', 'churn', 'gender', 
                     'partner', 'dependents', 'phone_service', 'paperless_billing', 'multiple_lines',
                     'online_security', 'online_backup', 'device_protection', 'tech_support', 'streaming_tv',
-                    'streaming_movies', 'contract_type', 'internet_service_type', 'payment_type' ], inplace=True)
+                    'streaming_movies', 'contract_type', 'internet_service_type', 'payment_type'], inplace=True)
 
 
     # concatenating dummy to DF
