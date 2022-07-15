@@ -40,7 +40,7 @@ Who is likely to churn?
 
 3. libraries used are pandas, matplotlib, seaborn, stats, numpy, sklearn and math
 
-4. Run my exploration / presentation files
+4. Run my exploration / Presentation files to reproduce work
 
 ### The Plan
 
